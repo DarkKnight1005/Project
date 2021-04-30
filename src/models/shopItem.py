@@ -8,4 +8,7 @@ class ShopItem:
         return self.name
     
     def getCost(self):
-        return 
+        return self.cost
+
+    def getUrl(self):
+        return self.url;

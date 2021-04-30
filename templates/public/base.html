@@ -29,15 +29,65 @@
                 </div>
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                     <form method="POST", action="/process">
+                        {{ form.hidden_tag() }}
+                        
                         <div class="form-row">
-                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" name="search_text" placeholder="Enter name of product..." autofocus=""></div>
-                            <!-- <div class="col-12 col-md-3" style="color: rgb(99,75,75);"><a class="btn btn-primary btn-block btn-lg" role="button" style="background: rgba(45,45,45,0.82);">Search</a></div> -->
-                            
-                            <div class="col-12 col-md-3" style="color: rgb(99,75,75);"><input class="btn btn-primary btn-block btn-lg" type="submit" name="submit_button" style="background: rgba(45,45,45,0.82);" value="Search"></div>
-                            <div class="slidecontainer">
-                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                              </div>
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                            <div class="form-group">
+                                {{ form.itemToFind(class="form-control form-control-lg ", placeholder="Enter name of product...") }}
+                           
+                            <!-- <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" name="search_text" placeholder="Enter name of product..." autofocus=""></div> -->
+                            </div>
+                    </div>
+                            <div class="col-12 col-md-3" style="color: rgb(99,75,75);">
+                                <!-- <div class="btn btn-primary btn-block btn-lg" style="background: rgba(45,45,45,0.82);"> -->
+                            <div class="form-group">
+                                {{ form.submit(class="btn btn-primary btn-block btn-lg", style="background: rgba(45,45,45,0.82);", placeholder="Submit") }}
+                            <!-- <div class="col-12 col-md-3" style="color: rgb(99,75,75);"><input class="btn btn-primary btn-block btn-lg" type="submit" name="submit_button" style="background: rgba(45,45,45,0.82);" value="Search"></div> -->
+                            </div>
+                            </div>
 
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="amazon" autocomplete="on" name="amazon">
+                            <label for="amazon" class="form-check-label">Amazon</label><br>
+                            <input type="checkbox" class="form-check-input" id="tapaz" autocomplete="on" name="tapaz">
+                            <label for="tapaz" class="form-check-label">TapAz</label><br>
+                        </div>
+                        
+                        <div class="form-radio">
+                            <input type="radio" id="AZN" name="currency" value="AZN">
+                            <label for="AZN">AZN</label><br>
+                            <input type="radio" id="USD" name="currency" value="USD">
+                            <label for="USD">USD</label><br>
+                        </div>
+                        <div>
+                            <label for="Filter">Filter by:</label>
+                            <select name="Filter" id="Filter">
+                            <option value="Price">Price</option>
+                            <option value="Shipping">Shipping</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="Order">Order:</label>
+                            <select name="Order" id="Order">
+                            <option value="Ascending">Ascending</option>
+                            <option value="Descending">Descending</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12 my-auto">
+                        <div class="form-row">
+                            <div class="col-2 col-md-4 mb-2 mb-md-0">
+                            <div class="form-group">
+                                {{ form.priceFrom(class="form-control form-control-lg ", placeholder="From") }}
+                            </div>
+                        </div>
+                        <div class="col-2 col-md-4 mb-2 mb-md-0">
+                            <div class="form-group">
+                                {{ form.priceTo(class="form-control form-control-lg ", placeholder="To") }}
+                            </div>
+                        </div>
+                        </div>
                         </div>
                     </form>
                 </div>
@@ -52,7 +102,6 @@
     {% if isSearching %}
     <!-- <div class="container"> -->
         <div class = "row">
-            
             <div class="col">
                 <!-- <ul class="border"> -->
                 {% for item1 in itemsAmazon %}
@@ -65,23 +114,9 @@
                 {% endfor %}
                 <!-- </ul> -->
             </div>
-     
-            <div class="col">
-                
-                {% for item1 in itemsAmazon %}
-                <!-- <ul class="border"> -->
-                <li>
-                    <p><a href={{item1[2]}}>{{item1[0]}}</a>
-                    <br> 
-                    <br>{{item1[1]}}
-                    <br></p>
-                </li>
-                {% endfor %}
-                <!-- </ul> -->
-            </div>
             <div class="col">
                 <!-- <ul class="border"> -->
-                {% for item1 in itemsAmazon %}
+                {% for item1 in itemsTapAz %}
                 <li>
                     <p><a href={{item1[2]}}>{{item1[0]}}</a>
                     <br> 
