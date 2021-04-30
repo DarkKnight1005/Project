@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - HyandrDos Inc.</title>
+    <meta name="description" content="Websracper tool">
+    <!-- <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href= "{{ url_for('static',filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic">
+    <!-- <link rel="stylesheet" href="static/assets/fonts/font-awesome.min.css">  -->
+    <link rel="stylesheet" href= "{{ url_for('static',filename='assets/fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href= "{{ url_for('static',filename='assets/mycss.css') }}">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand bg-light navigation-clean">
+        <div class="container"><a class="navbar-brand" href="/">HyandrDos Inc.</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"></button>
+            <div class="collapse navbar-collapse" id="navcol-1"></div>
+        </div>
+    </nav>
+    <header class="masthead text-white text-center" style="background: url('https://lh6.googleusercontent.com/proxy/UIS873Bc7gwv76Y4uufFawubnoYsHm3NPC9nOHIJVmoYXnWH1fLAizIaAgArOQWgGezDFL74BhxKxGiKyaoXqaVPw9lqorMeOlucJyQJr9r5opzEwoQ1kazD-SE=s0-d')no-repeat center center;background-size: cover;">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h1 class="mb-5">Search for your dream product</h1>
+                </div>
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form method="POST", action="/process">
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0"><input class="form-control form-control-lg" type="text" name="search_text" placeholder="Enter name of product..." autofocus=""></div>
+                            <!-- <div class="col-12 col-md-3" style="color: rgb(99,75,75);"><a class="btn btn-primary btn-block btn-lg" role="button" style="background: rgba(45,45,45,0.82);">Search</a></div> -->
+                            
+                            <div class="col-12 col-md-3" style="color: rgb(99,75,75);"><input class="btn btn-primary btn-block btn-lg" type="submit" name="submit_button" style="background: rgba(45,45,45,0.82);" value="Search"></div>
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                              </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <!-- <h4>QQQQ<h4> -->
+            <!-- {% block content %}
+            {% endblock %} -->
+
+    {% if isSearching %}
+    <!-- <div class="container"> -->
+        <div class = "row">
+            
+            <div class="col">
+                <!-- <ul class="border"> -->
+                {% for item1 in itemsAmazon %}
+                <li>
+                    <p><a href={{item1[2]}}>{{item1[0]}}</a>
+                    <br> 
+                    <br>{{item1[1]}}
+                    <br></p>
+                </li>
+                {% endfor %}
+                <!-- </ul> -->
+            </div>
+     
+            <div class="col">
+                
+                {% for item1 in itemsAmazon %}
+                <!-- <ul class="border"> -->
+                <li>
+                    <p><a href={{item1[2]}}>{{item1[0]}}</a>
+                    <br> 
+                    <br>{{item1[1]}}
+                    <br></p>
+                </li>
+                {% endfor %}
+                <!-- </ul> -->
+            </div>
+            <div class="col">
+                <!-- <ul class="border"> -->
+                {% for item1 in itemsAmazon %}
+                <li>
+                    <p><a href={{item1[2]}}>{{item1[0]}}</a>
+                    <br> 
+                    <br>{{item1[1]}}
+                    <br></p>
+                </li>
+                {% endfor %}
+                <!-- </ul> -->
+            </div>
+        </div>
+    <!-- </div> -->
+    {% endif %}
+    </section>
+    <footer class="footer bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-left">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><a href="#">About</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Contact</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Terms of &nbsp;Use</a></li>
+                        <li class="list-inline-item"><span>⋅</span></li>
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                    </ul>
+                    <p class="text-muted small mb-4 mb-lg-0">© HyandrDos Inc. 2021. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 my-auto h-100 text-center text-lg-right">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter fa-2x fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram fa-2x fa-fw"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
