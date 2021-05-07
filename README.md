@@ -2,6 +2,21 @@
 
 Webscraper which is used to searcha dn scrape data with some optional filters from Amazon and TapAz
 
+## Outline
+- [For Clients](##for-clients)
+  - [Usage](###usage)
+  - [Features](###features)
+- [For Developers](##for-developers)
+  - [Initial Set Up](###initial-set-up)
+  - [Deploy](###deploy)
+  - [Scraper Features](###scraper-features)
+  - [Webdriver](###webdriver)
+  - [Site Template](###site-template)
+  - [Filter Extensions](###filter-extension)
+  - [Other Extensions](###other-extensions)
+- [Troubleshooting](##troubleshooting)
+
+
 ## For Clients
 
 
@@ -72,7 +87,7 @@ Scraped results represented as list of ShopItem which is the model with the foll
 - url (to the page of product)
 - shopName (name of the syte from which the product was scraped)
 
-### Filter Extension
+### Filter Extensions
 In order to create extension for the filters the new class inherited from the Filter class have to be created. Then `applyFilter` method have to be overwriten and the modifed output should be presened.
 After that new Filter extension is created and can be used in app and in "and" and "or"(can be implmeneted in case of necessity) filters.
 
