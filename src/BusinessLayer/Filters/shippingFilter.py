@@ -1,4 +1,5 @@
 from .filter import *
+from src.models import *
 
 class ShippingFilter(Filter):
     def __init__(self):
@@ -8,7 +9,7 @@ class ShippingFilter(Filter):
         _nonShipable = []
         _shipable = []
         for elem in ls_all:
-            if elem[1] == "---":
+            if elem.price == "---":
                 _nonShipable.append(elem)
             else:
                 _shipable.append(elem)

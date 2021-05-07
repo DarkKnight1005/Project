@@ -106,9 +106,9 @@
                 <!-- <ul class="border"> -->
                 {% for item1 in itemsAmazon %}
                 <li>
-                    <p><a href={{item1[2]}}>{{item1[0]}}</a>
+                    <p><a href={{item1.url}}>{{item1.name}}</a>
                     <br> 
-                    <br>{{item1[1]}}
+                    <br>{{item1.price}}
                     <br></p>
                 </li>
                 {% endfor %}
@@ -118,9 +118,9 @@
                 <!-- <ul class="border"> -->
                 {% for item1 in itemsTapAz %}
                 <li>
-                    <p><a href={{item1[2]}}>{{item1[0]}}</a>
+                    <p><a href={{item1.url}}>{{item1.name}}</a>
                     <br> 
-                    <br>{{item1[1]}}
+                    <br>{{item1.price}}
                     <br></p>
                 </li>
                 {% endfor %}

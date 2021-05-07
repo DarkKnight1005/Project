@@ -4,10 +4,11 @@ from selenium import webdriver
 from pathlib import Path
 import csv
 import os
+from src.models import *
 
 class AmazonScraper(Scraper):
-    def __init__(self, siteName, url, itemName, productLimit):
-        super().__init__(siteName, url, itemName, productLimit);
+    def __init__(self, siteName, url, itemName, productLimit, driver):
+        super().__init__(siteName, url, itemName, productLimit, driver);
     
     def doScrape(self):
         item = super().getItemName()
@@ -24,12 +25,10 @@ class AmazonScraper(Scraper):
 
             for card in cards:
                 data = self._scrape_data(card)
-                ads_data.append(data)
+                shopItem = ShopItem(data["title"], data["price"], data["link"], data["site"])
+                ads_data.append(shopItem)
 
-        with open('results.csv', 'a+') as f:
-            f.write("title,price,link,site\n")
-        f.close()
-        super()._writeCsv(ads_data)
+        return ads_data
 
     def _scrape_data(self, card):
         try:

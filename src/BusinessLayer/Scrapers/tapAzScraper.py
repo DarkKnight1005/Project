@@ -4,10 +4,11 @@ from selenium import webdriver
 from pathlib import Path
 import csv
 import os
+from src.models import *
 
 class TapAzScraper(Scraper):
-    def __init__(self, siteName, url, itemName, productLimit):
-        super().__init__(siteName, url, itemName, productLimit);
+    def __init__(self, siteName, url, itemName, productLimit, driver):
+        super().__init__(siteName, url, itemName, productLimit, driver);
     
     def doScrape(self):
         item = super().getItemName()
@@ -19,12 +20,12 @@ class TapAzScraper(Scraper):
         cards = soup.find_all('div', class_='products-i rounded')
         for card in cards:
             data = self._scrape_data(card)
-            ads_data.append(data)
+            shopItem = ShopItem(data["title"], data["price"], data["link"], data["site"])
+            ads_data.append(shopItem)
+        
+        return ads_data
 
-        with open('results.csv', 'a+', encoding='utf-8') as f:
-            f.write("title,price,link,site\n")
-        f.close()
-        super()._writeCsv(ads_data)
+       
 
     def _scrape_data(self, card):
         link = card.find('a', class_='products-link').get('href')

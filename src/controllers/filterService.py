@@ -1,4 +1,5 @@
-from src.Filters import *
+from src.BusinessLayer.Filters import *
+from src.models import *
 
 class FilterService:
     def __init__(self, ls_all, filterOption, price_from, price_to, isAcsending):
@@ -35,10 +36,11 @@ class FilterService:
                 ls_all = shippingFilter.applyFilter(ls_all)[:]
 
             elif self.__filterOption == "price":
-                ls_all = sorted(ls_all, key = lambda row: float(row[1][:-1]))
+                # print("=-=-=-=-=-=-=-=-=-=-=-=-")
+                ls_all = sorted(ls_all, key = lambda elem: float(elem.price[:-1]))
                 _ls_temp = []
                 for elem in ls_all:
-                    if elem[1] != "---":
+                    if elem.price != "---":
                         _ls_temp.append(elem)  
                 ls_all = _ls_temp[:]
 

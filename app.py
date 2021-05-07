@@ -26,7 +26,9 @@ def findPage(itemToFind, store_list = None, filterOption = None, isAcsending = N
         price_from = None
     if price_to == "NAN":
         price_to = None
-    finder = Finder(itemToFind)
+
+    driver = Driver("/Users/ayazpanahov/Desktop/BHOS/OOP/Project/chromedriver", "Chrome")
+    finder = Finder(itemToFind, driver=driver)
     ls_all = finder.makeSearch(store_list, currency)[:]
     filterService = FilterService(ls_all, filterOption, price_from, price_to, isAcsending)
     ls_all = filterService.filterAndGetItems()[:]
@@ -78,13 +80,17 @@ def process():
         if _filter == "price":
             try:
                 priceFrom = request.form["priceFrom"]
+                if priceFrom == '':
+                    priceFrom = "NAN"
             except:
-                priceFrom = None
+                priceFrom = "NAN"
 
             try:
                 priceTo = request.form["priceTo"]
+                if priceTo == '':
+                    priceTo = "NAN"
             except:
-                priceTo = None
+                priceTo = "NAN"
 
         print(request.form)
         return redirect(url_for("findPage", itemToFind = request.form["itemToFind"], store_list = storeList, filterOption = _filter, isAcsending = isAscening, price_from = priceFrom, price_to = priceTo, currency = currency))

@@ -1,4 +1,5 @@
 from .filter import *
+from src.models import *
 
 class PriceLessThan(Filter):
     
@@ -11,7 +12,7 @@ class PriceLessThan(Filter):
         
         _ls_temp = []
         for elem in ls_all:
-            if elem[1] != "---" and elem[1].find('price') == -1 and elem[1].find(",") == -1  and float(elem[1][:-1]) <= int(self.__price_to ):
+            if elem.price != "---" and elem.price.find('price') == -1 and elem.price.find(",") == -1  and float(elem.price[:-1]) <= int(self.__price_to):
                 _ls_temp.append(elem)  
         ls_all = _ls_temp[:]
         return ls_all

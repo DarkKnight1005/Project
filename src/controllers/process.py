@@ -5,10 +5,10 @@ class Process:
         pass
 
     def process(self):
-
-        _f = open("results.csv", "w+")
-        _f.write("_")
-        _f.close();
-        os.remove("results.csv")
-        _f = open("results.csv", "x")
-        _f.close();
+        pass
+    #     _f = open("results.csv", "w+")
+    #     _f.write("_")
+    #     _f.close();
+    #     os.remove("results.csv")
+    #     _f = open("results.csv", "x")
+    #     _f.close();

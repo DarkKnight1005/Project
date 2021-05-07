@@ -1,4 +1,5 @@
 from .filter import *
+from src.models import *
 
 class AndFilter(Filter):
 
@@ -8,6 +9,6 @@ class AndFilter(Filter):
 
     def applyFilter(self, ls_all):
         _ls_all = self.__filter1.applyFilter(ls_all)
-        _ls_all = self.__filter2.applyFilter(ls_all)
+        _ls_all = self.__filter2.applyFilter(_ls_all)
         
         return _ls_all

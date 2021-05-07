@@ -6,14 +6,13 @@ import csv
 import os
 import abc
 
-browser = webdriver.Chrome(executable_path="/Users/ayazpanahov/Desktop/BHOS/OOP/Project/chromedriver")
-
 class Scraper(Website, metaclass=abc.ABCMeta):
 
-    def __init__(self, siteName, url, itemName, itemLimit):
+    def __init__(self, siteName, url, itemName, itemLimit, driver):
         super().__init__(siteName, url);
         self.__itemName = itemName
         self.__itemLimit = itemLimit
+        self.__driver = driver
 
     @abc.abstractmethod
     def doScrape(self):
@@ -23,18 +22,9 @@ class Scraper(Website, metaclass=abc.ABCMeta):
     def _scrape_data(self, card):
         pass
 
-    def _writeCsv(self, ads):
-        with open('results.csv', 'a+') as f:
-            fields = ['title', 'price', 'link', 'site']
-
-            writer = csv.DictWriter(f, fieldnames=fields)
-
-            for ad in ads:
-                writer.writerow(ad)
-
     def _get_html(self, url):
-        browser.get(url)
-        return browser.page_source
+        self.__driver.getBrowser().get(url)
+        return self.__driver.getBrowser().page_source
 
     def getItemLimit(self):
         return self.__itemLimit
