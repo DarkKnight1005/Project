@@ -1,10 +1,9 @@
 # Mega Scrape
-------
 
 Webscraper which is used to searcha dn scrape data with some optional filters from Amazon and TapAz
 
 ## For Clients
-------
+
 
 ### Usage
 Usage of this web app is very simple. In search box write the name of desired product, then select some available ашдеукштп features and press the search button. Then after some magic occured you will see the scraped results.
@@ -27,7 +26,6 @@ Below you can see all available filtering fatures of this Webscraper.
 
 
 ## For Developers
-------
 
 ### Initial Set Up
 In order to deploy the project you will need python 3.9+ and pip installed. Running:
@@ -46,7 +44,7 @@ After this the standart syte version is running on the port which is specifed in
 ### Scraper Features
 The scraper class have several features like:
 - Custom Max Scraped Products Limit (by default 20)
-- Custom Scraping Driver ([See Webdriver Part])(#Webdriver))
+- Custom Scraping Driver ([See Webdriver Part](###Webdriver))
 
 ### Webdriver
 As developer you can choose which webdriver you would prefer to use, it can be chormium driver or firefox, does not matter. However, consider that project is using selenium webdriver, all webdrivers which is supported by selenium are also supported by Mega Scrape.
@@ -83,7 +81,7 @@ The project has Model-View-Controller schema, so you can easyly add some new con
 
 ## Troubleshooting
 
-For now troubleshooting is now supported in this documentation. If there are any questions please do not hesitate to contact with me via
+For now troubleshooting is not supported in this documentation. If there are any questions please do not hesitate to contact with me via
 ```
 Email: ayaz.panahov.std@bhos.edu.az
 WhatsApp: +994507935935
