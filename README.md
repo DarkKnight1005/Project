@@ -3,18 +3,18 @@
 Webscraper which is used to searcha dn scrape data with some optional filters from Amazon and TapAz
 
 ## Outline
-- [For Clients](##for-clients)
-  - [Usage](###usage)
-  - [Features](###features)
-- [For Developers](##for-developers)
-  - [Initial Set Up](###initial-set-up)
-  - [Deploy](###deploy)
-  - [Scraper Features](###scraper-features)
-  - [Webdriver](###webdriver)
-  - [Site Template](###site-template)
-  - [Filter Extensions](###filter-extension)
-  - [Other Extensions](###other-extensions)
-- [Troubleshooting](##troubleshooting)
+- [For Clients](#for-clients)
+  - [Usage](#usage)
+  - [Features](#features)
+- [For Developers](#for-developers)
+  - [Initial Set Up](#initial-set-up)
+  - [Deploy](#deploy)
+  - [Scraper Features](#scraper-features)
+  - [Webdriver](#webdriver)
+  - [Site Template](#site-template)
+  - [Filter Extensions](#filter-extensions)
+  - [Other Extensions](#other-extensions)
+- [Troubleshooting](#troubleshooting)
 
 
 ## For Clients
