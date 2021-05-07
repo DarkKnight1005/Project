@@ -15,7 +15,7 @@ Webscraper which is used to searcha dn scrape data with some optional filters fr
   - [Site Template](#site-template)
   - [Filter Extensions](#filter-extensions)
   - [Other Extensions](#other-extensions)
-- [UML Diagram](#uml-diargam)
+- [UML Diagram](#uml-diagram)
 - [Troubleshooting](#troubleshooting)
 
 
