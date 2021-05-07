@@ -59,7 +59,7 @@ After this the standart syte version is running on the port which is specifed in
 ### Scraper Features
 The scraper class have several features like:
 - Custom Max Scraped Products Limit (by default 20)
-- Custom Scraping Driver ([See Webdriver Part](###Webdriver))
+- Custom Scraping Driver ([See Webdriver Part](#webdriver))
 
 ### Webdriver
 As developer you can choose which webdriver you would prefer to use, it can be chormium driver or firefox, does not matter. However, consider that project is using selenium webdriver, all webdrivers which is supported by selenium are also supported by Mega Scrape.
