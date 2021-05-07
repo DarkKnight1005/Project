@@ -3,6 +3,7 @@
 Webscraper which is used to searcha dn scrape data with some optional filters from Amazon and TapAz
 
 ## Outline
+- [Screen Shot of Running Site](#screen-shot-of-running-site)
 - [For Clients](#for-clients)
   - [Usage](#usage)
   - [Features](#features)
@@ -14,8 +15,12 @@ Webscraper which is used to searcha dn scrape data with some optional filters fr
   - [Site Template](#site-template)
   - [Filter Extensions](#filter-extensions)
   - [Other Extensions](#other-extensions)
+- [UML Diagram](#uml-diargam)
 - [Troubleshooting](#troubleshooting)
 
+
+## Screen Shot of Running Site
+![Screen Shot of Running Site](./ss_from_site.png)
 
 ## For Clients
 
@@ -93,6 +98,9 @@ After that new Filter extension is created and can be used in app and in "and" a
 
 ### Other Extensions
 The project has Model-View-Controller schema, so you can easyly add some new controllers or models into approptiate place and import them with `__init__.py` files. Some new folders can also be created, but then thet have to be added to the main init file which is located directly inside the `src` folder.
+
+## UML Diagram
+![UML Diagram](./uml_diagram.png)
 
 ## Troubleshooting
 
